@@ -51,7 +51,6 @@ public class FileUploadController {
 
     @GetMapping("/files/{filename:.+}")
     @ResponseBody
-    // public ResponseEntity<Resource> serveFile(@PathVariable String filename) {
     public ResponseEntity<String> serveFile(@PathVariable String filename) {
 
         Resource file = storageService.loadAsResource(filename);
@@ -73,7 +72,7 @@ public class FileUploadController {
             e1.printStackTrace();
         }
         return ResponseEntity.ok().header(HttpHeaders.CONTENT_TYPE, 
-            "text/html; charset=UTF-8").body(safeOutput);
+        "text/html; charset=UTF-8").body(safeOutput);
 	}
 
 	@PostMapping("/")
