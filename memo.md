@@ -1,5 +1,3 @@
-Edit
-
 ```java
     public ResponseEntity<Resource> serveFile(@PathVariable String filename) {
 
